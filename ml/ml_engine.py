@@ -1,20 +1,20 @@
 import joblib
 import pandas as pd
 
-from decision_engine import build_decision
-from explanation_engine import generate_explanation
-from neighbor_validator import validate_with_neighbors
+from ml.decision_engine import build_decision
+from ml.explanation_engine import generate_explanation
+from ml.neighbor_validator import validate_with_neighbors
 
 
 # ============================================================
 # LOAD MODELS
 # ============================================================
 
-anomaly_data = joblib.load("model/anomaly_model.pkl")
+anomaly_data = joblib.load("ml/models/anomaly_model.pkl")
 anomaly_model = anomaly_data["model"]
 anomaly_features = anomaly_data["features"]
 
-classifier_data = joblib.load("model/classifier_model.pkl")
+classifier_data = joblib.load("ml/models/classifier_model.pkl")
 classifier = classifier_data["model"]
 classifier_features = classifier_data["features"]
 
